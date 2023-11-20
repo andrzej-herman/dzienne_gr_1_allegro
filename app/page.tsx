@@ -1,8 +1,15 @@
+import { Button } from "@/components/ui/button"
+import MainHeader from "@/components/common/MainHeader";
+
+
 
 export default function Home() {
   return (
-   <div className="flex items-center justify-center h-full">
-     <p className="text-5xl text-pink-600 tracking-tight font-bold">Społeczna Akademia Nauk</p>
-   </div>
+
+      <div>
+          <MainHeader/>
+      </div>
+
+
   )
 }
