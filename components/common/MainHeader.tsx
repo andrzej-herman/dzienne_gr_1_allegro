@@ -13,23 +13,25 @@ import {
 import { categories } from "@/data/categories";
 import {ChangeEvent, useState} from "react";
 
+interface MainHeaderProps {
+    onSearch: (value: string) => void;
+    onCategorySelected: (value: string) => void;
+}
 
-function MainHeader() {
+function MainHeader ( { onSearch, onCategorySelected } : MainHeaderProps ) {
 
     const [search, setSearch] = useState<string>("");
     const [category, setCategory] = useState<string>("0");
 
     const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
         setSearch(e.target.value);
+        onSearch(e.target.value)
     }
 
     const handleCategory = (value: string) => {
-        setCategory(value)
+        setCategory(value);
+        onCategorySelected(value);
     }
-
-
-    console.log(`SEARCH: => ${search}`);
-    console.log(`CATEGORY: => ${categories.find(x => x.value === parseInt(category))?.name}`);
 
     return (
        <div className="fixed w-full flex items-center justify-between border-b p-4">

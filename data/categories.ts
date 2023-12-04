@@ -3,7 +3,6 @@ export interface Category {
     value: number;
 }
 
-
 export const categories : Category[] = [
     { name: "Wszystkie kategorie", value: 0 },
     { name: "Elektronika", value: 1 },
@@ -12,3 +11,6 @@ export const categories : Category[] = [
     { name: "Sport", value: 4 },
     { name: "Uroda", value: 5 }
 ]
+
+
+
